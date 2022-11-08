@@ -1,13 +1,17 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: Hello world
+author: Nagasree2000
+description: Some description
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  who-to-greet:
+    description: "who to greet"
     required: true
-    default: '1000'
+    default: Nagasree2000
 outputs:
-  time: # output will be available to future steps
-    description: 'The current time after waiting'
+  time:
+    description: "The greeting time"
 runs:
-  using: 'node16'
-  main: 'dist/index.js'
+  using: "node12"
+  main: "dist/index.js"
+branding:
+  icon: "cloud-drizzle"
+  color: "green"

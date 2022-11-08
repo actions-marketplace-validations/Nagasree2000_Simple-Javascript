@@ -48,19 +48,14 @@ Most toolkit and CI/CD operations involve async operations so the action is run 
 
 ```javascript
 const core = require('@actions/core');
+const core = require('@actions/github');
 ...
 
-async function run() {
-  try {
-      ...
-  }
-  catch (error) {
-    core.setFailed(error.message);
-  }
-}
+runs:
+  using: "node12"
+  main: "dist/index.js"
 
-run()
-```
+
 
 See the [toolkit documentation](https://github.com/actions/toolkit/blob/master/README.md#packages) for the various packages.
 
@@ -108,9 +103,17 @@ See the [versioning documentation](https://github.com/actions/toolkit/blob/maste
 You can now consume the action by referencing the v1 branch
 
 ```yaml
-uses: actions/javascript-action@v1
+uses: Nagasree2000/Simple-Javascript@v1
 with:
-  milliseconds: 1000
+  who-to-greet: "user"
 ```
 
 See the [actions tab](https://github.com/actions/javascript-action/actions) for runs of this action! :rocket:
+
+## Output
+
+You can print output using output variable
+```yaml
+outputs: time
+
+  
